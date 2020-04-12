@@ -3,12 +3,12 @@ import { View, Text } from 'react-native';
 import CountDown from 'react-native-countdown-component';
 
 
-const CountDownItem = ({ navigation }) => {
+const CountDownItem = (props) => {
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={{ fontSize: 20 }}>13 April 2020</Text>
-                <Text style={{ fontSize: 20 }}>Demo Event Kamu</Text>
+                <Text style={{ fontSize: 20 }}>{props.date}</Text>
+                <Text style={{ fontSize: 20 }}>{props.title}</Text>
             </View>
             <CountDown
                 until={172800}
@@ -19,7 +19,7 @@ const CountDownItem = ({ navigation }) => {
                 timeToShow={['D', 'H', 'M', 'S']}
                 timeLabels={{ d: 'Days', h: 'Hours', m: 'Minutes', s: 'Seconds' }}
             />
-        </View >
+        </View>
     )
 }
 
