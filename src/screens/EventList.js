@@ -1,9 +1,15 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 import CountDown from './CountDownItem';
 import { useSelector } from 'react-redux';
+import { FlatList } from 'react-native-gesture-handler';
 
+renderEvent = () => {
+    <View>
+        <Text>List Item</Text>
+    </View>
+}
 
 const EventList = ({ navigation }) => {
 
@@ -11,12 +17,15 @@ const EventList = ({ navigation }) => {
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            {
-                events.map(event => <CountDown
-                    key={event.eventId}
-                    date={event.eventDate}
-                    title={event.eventTitle} />)
-            }
+            <FlatList
+                data={events}
+                renderItem={({ item }) => (
+                    <CountDown key={item.eventId}
+                        date={item.eventDate}
+                        title={item.eventTitle} />
+                )}
+                keyExtractor={(item) => item.eventId.toString()}
+            />
 
             <FAB
                 style={styles.fab}

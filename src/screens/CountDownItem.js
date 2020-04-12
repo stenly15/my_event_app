@@ -5,7 +5,7 @@ import CountDown from 'react-native-countdown-component';
 
 const CountDownItem = (props) => {
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, margin: 15 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Text style={{ fontSize: 20 }}>{props.date}</Text>
                 <Text style={{ fontSize: 20 }}>{props.title}</Text>
