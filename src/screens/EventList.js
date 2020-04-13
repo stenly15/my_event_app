@@ -22,17 +22,19 @@ const EventList = ({ navigation }) => {
                 renderItem={({ item }) => (
                     <CountDown key={item.eventId}
                         date={item.eventDate}
-                        title={item.eventTitle} />
+                        title={item.eventTitle}
+                        until={item.eventCountDown}
+                    />
                 )}
                 keyExtractor={(item) => item.eventId.toString()}
             />
-
             <FAB
                 style={styles.fab}
                 large
                 icon="plus"
                 onPress={() => navigation.navigate('NewEvent')}
             />
+
         </View>
     )
 }

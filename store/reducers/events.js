@@ -2,33 +2,7 @@ import { GET_ALL_EVENTS, ADD_NEW_EVENT } from "../actions/events";
 import { createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
-    allEvents: [
-        {
-            eventId: '1',
-            eventDate: '13 April 2020',
-            eventTitle: 'Demo Event Kamu1'
-        },
-        {
-            eventId: '2',
-            eventDate: '13 April 2020',
-            eventTitle: 'Demo Event Kamu2'
-        },
-        {
-            eventId: '3',
-            eventDate: '13 April 2020',
-            eventTitle: 'Demo Event Kamu3'
-        },
-        {
-            eventId: '4',
-            eventDate: '13 April 2020',
-            eventTitle: 'Demo Event Kamu4'
-        },
-        {
-            eventId: '5',
-            eventDate: '13 April 2020',
-            eventTitle: 'Demo Event Kamu5'
-        }
-    ]
+    allEvents: []
 };
 
 const eventReducer = createReducer(initialState, {
@@ -41,18 +15,21 @@ const eventReducer = createReducer(initialState, {
         const {
             eventId,
             eventDate,
-            eventTitle
+            eventTitle,
+            eventCountDown
         } = action.payload;
 
         let eventItem = {
             eventId,
             eventDate,
-            eventTitle
+            eventTitle,
+            eventCountDown
         }
+        console.log(eventItem);
 
         return {
             ...state,
-            allEvents: { ...state.allEvents, eventItem },
+            allEvents: [...state.allEvents, eventItem],
         };
     }
 })

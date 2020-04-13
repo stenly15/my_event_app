@@ -11,9 +11,9 @@ const CountDownItem = (props) => {
                 <Text style={{ fontSize: 20 }}>{props.title}</Text>
             </View>
             <CountDown
-                until={172800}
+                until={props.until}
                 size={40}
-                onFinish={() => alert('Finished')}
+                onFinish={() => alert(`Event ${props.title} finished`)}
                 digitStyle={{ backgroundColor: '#FFF' }}
                 digitTxtStyle={{ color: '#9400D3' }}
                 timeToShow={['D', 'H', 'M', 'S']}
