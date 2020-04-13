@@ -15,7 +15,7 @@ const CountDownItem = (props) => {
                 size={40}
                 onFinish={() => alert('Finished')}
                 digitStyle={{ backgroundColor: '#FFF' }}
-                digitTxtStyle={{ color: '#1CC625' }}
+                digitTxtStyle={{ color: '#9400D3' }}
                 timeToShow={['D', 'H', 'M', 'S']}
                 timeLabels={{ d: 'Days', h: 'Hours', m: 'Minutes', s: 'Seconds' }}
             />
